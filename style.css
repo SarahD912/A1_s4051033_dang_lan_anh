@@ -11,4 +11,9 @@ h1 {
     text-align: center;
 }
 
-
+model-viewer {
+  width: 100vw;
+  height: 80vh;
+  display: block;
+  margin: auto;
+}
