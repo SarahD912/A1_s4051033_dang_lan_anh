@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="off_testfont_color" data-name="off testfont color" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1424.26">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.11em;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        font-family: DancingScript-Bold, 'Dancing Script';
+        font-size: 243.56px;
+        font-weight: 700;
+      }
+
+      .cls-4 {
+        font-family: DancingScript-Regular, 'Dancing Script';
+        font-size: 245.59px;
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        font-family: MonotypeCorsiva, 'Monotype Corsiva';
+        font-size: 278.8px;
+      }
+
+      .cls-5, .cls-6 {
+        fill: #fcf7ba;
+      }
+
+      .cls-3 {
+        letter-spacing: -.05em;
+      }
+    </style>
+  </defs>
+  <text class="cls-6" transform="translate(159.07 826.89)"><tspan class="cls-1" x="0" y="0">T</tspan><tspan class="cls-2" x="104.73" y="0">o </tspan><tspan class="cls-3" x="258.67" y="0">T</tspan><tspan class="cls-2" x="378.74" y="0">he Butterfly</tspan><tspan class="cls-4" x="1460.15" y="0"> </tspan></text>
+  <text class="cls-5" transform="translate(1683.07 734.05) scale(.58)"><tspan x="0" y="0">2</tspan></text>
+</svg>
