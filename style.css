@@ -1,0 +1,1043 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  color: #eae5cf;
+  background-color: #04212E;
+  overflow-x: hidden; /*tránh tràn màn hình*/
+}
+
+/*html {
+    overflow-y: scroll;
+}
+
+body {
+    overflow-y: hidden;
+}*/
+
+.intro-parallax {
+  text-align: center;
+  /*padding: 20px;*/
+  height: 100vh;
+}
+
+/*.title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}*/
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    top: 0;
+    left: 0;
+    /* Optional: add margin-top in case I want space from the top */
+    margin-top: 20px;
+    z-index: 1;
+}
+
+svg {
+    display: block;
+    width: auto;
+    height: 500px;
+}
+
+svg .path1 {
+    fill: transparent;
+    stroke: #fcf7ba;
+    stroke-width: 2;
+    stroke-dasharray: 7900.3;
+    stroke-dashoffset: 7900.3;
+    animation: title-animation-1 ease-in-out 1 forwards;
+}
+
+svg .path2 {
+    fill: transparent;
+    stroke: #fcf7ba;
+    stroke-width: 2;
+    stroke-dasharray: 316.8;
+    stroke-dashoffset: 316.8;
+    animation: title-animation-2 ease-in-out 1 forwards;
+}
+
+@keyframes title-animation-1 {
+    0% {
+    Stroke-dashoffset: 7900.3;
+    fill: transparent;
+    }
+    
+    80% {
+    Stroke-dashoffset: 0;    
+    fill: transparent;
+    }
+    
+    100% {
+    fill: #fcf7ba;
+    stroke-dashoffset: 0;
+    }
+    
+}
+
+@keyframes title-animation-2 {
+    0% {
+    Stroke-dashoffset: 316.8;
+    fill: transparent;
+    }
+    
+    80% {
+    Stroke-dashoffset: 0;    
+    fill: transparent;
+    }
+    
+    100% {
+    fill: #fcf7ba;
+    stroke-dashoffset: 0;
+    }
+    
+}
+
+svg.filled .path1 {
+    fill: #fcf7ba;
+}
+
+svg.filled .path2 {
+    fill: #fcf7ba;
+}
+
+.svg1 {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 50px;
+}
+
+.svg2 {
+    width: 40px;
+    height: 43px;
+    position: absolute; 
+    right: 379px;
+    top: 245px;
+}
+
+#author {
+    position: absolute;
+    top: 350px;
+    left: 650px;
+    font-family: "Josefin Sans";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 82.5px */
+    letter-spacing: -1.21px;
+}
+
+/*reason: dẫn đến 2 thank cuộn*/
+/*section {
+    min-height: 100vh;
+}*/
+
+.parallax-elements { /*cân bằng section từ đây*/
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.parallax-elements img {
+    position: absolute;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.parallax-elements #sky {
+    width: 1000px;
+    height: auto;
+    top: 10px;
+    mix-blend-mode: screen;
+}
+
+.parallax-elements #clouds {
+    position: absolute;
+    width: 1550px;
+    height: auto;
+    margin-top: 1000px;
+    overflow-y: hidden;
+}
+
+.parallax-elements #title {
+    position: absolute;
+    top: 280px;
+    font-size: 5.5rem;
+    text-shadow: 0 10 40px rgba(0, 0, 0, 0.85);
+}
+
+
+.first-content {
+    height: 100vh
+}
+
+.first-scene{ /*cần bằng từ đây*/ /*step1*/
+    position: relative; /*parent*/
+    z-index: 10;
+}
+
+.first-scene img{ /*step2*/
+    position: absolute;
+    z-index: 10;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.first-scene #cloud-frame { /*step2*/
+    position: absolute;
+    width: 1500px;
+    height: auto;
+    top: 25px;
+    left: 0;
+}
+
+.first-scene #devil-flower {
+    position: absolute;
+    width: 700px;
+    height: auto;
+    right: 80px;
+    top: 1005px;
+    transform: rotate(-25deg);
+}
+
+@keyframes autoRotate {
+    /* Trạng thái ban đầu: không dịch chuyển */
+    0% {
+        transform: rotate(25deg);
+    }
+    /* Trạng thái cuối cùng: dịch chuyển sang trái 500px */
+    100% {
+        transform: rotate(-25deg); 
+    }
+}
+
+.first-scene #hourglass {
+    position: absolute;
+    width: 500px;
+    height: auto;
+    left: 200px;
+    top: 475px;
+    transform: rotate(25deg);
+    animation: autoRotate 3s ease-in-out infinite alternate;
+}
+
+model-viewer {
+  /*width: 100vw;
+  height: 80vh;*/
+   position: absolute;
+    width: 400px; /* Kích thước nhỏ hơn để kiểm tra */
+    height: 400px;
+    top: 90px;
+    left: 500px; /* Đặt mép trái tại 50% */
+    transform: translateX(440px); /* Dịch chuyển ngược lại 50% chính nó để căn giữa */
+    display: block;
+}
+
+@keyframes zoomout {
+    /* Trạng thái ban đầu: không dịch chuyển */
+    0% {
+        transform: scale(1);
+    }
+    /* Trạng thái cuối cùng: dịch chuyển sang trái 500px */
+    100% {
+        transform: scale(0.5); 
+    }
+}
+
+.first-scene #side-btf1 {
+    position: absolute;
+    width: 300px;
+    height: auto;
+    top: 1000px;
+    right: 300px;
+    animation: zoomout 5s ease-in-out infinite alternate;
+}
+
+.poem {
+    color: var(--test-font, #EAE5CF);
+    font-family: "Josefin Sans";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 82.5px */
+    letter-spacing: -1.21px;
+}
+
+#first-line {
+    Position: absolute;
+    top: 375px;
+    left: 300px;
+}
+#second-line {
+    Position: absolute;
+    top: 675px;
+    right: 300px;
+}
+#third-fourth-line {
+    Position: absolute;
+    top: 1025px;
+    left: 400px;
+}
+
+.first-hover {
+    color: #EAE5CF;
+    transition: all 0.3s ease-in-out;
+}
+
+.first-hover:hover {
+    color: #d52202;
+}
+
+
+.second-content {
+    height: 100vh;
+}
+
+.second-scene {
+    position: relative;
+    z-index: 100;
+    height: 100%; /* Hoặc một giá trị cố định nếu con muốn */
+    width: 100%;
+}
+
+.second-scene img {
+    position: absolute;
+    z-index: 100;
+    object-fit: cover;
+    pointer-events: none;
+
+    /*position: absolute;
+    z-index: 1000;
+    object-fit: cover;
+    pointer-events: none;*/
+}
+
+/* --- CSS cho hiệu ứng tuyết rơi --- */
+
+/* Container giới hạn khu vực tuyết rơi */
+#snow-container {
+    position: absolute; /* Quan trọng: định vị tương đối với .second-scene */
+    width: 100%;
+    height: 100%; /* Chiếm toàn bộ chiều cao của .second-scene */
+    top: 0;
+    left: 0;
+    overflow: hidden; /* Quan trọng: để các bông tuyết không tràn ra ngoài */
+    pointer-events: none; /* Để chuột có thể tương tác với các element khác bên dưới tuyết */
+    z-index: 101; /* Đảm bảo tuyết nằm trên các ảnh khác nếu cần, nhưng dưới các element quan trọng khác của con */
+}
+
+.snowflake {
+    position: absolute;
+    background: #EAE5CF; /* Màu trắng cho bông tuyết */
+    border-radius: 50%; /* Hình tròn */
+    opacity: 0; /* Bắt đầu ẩn */
+    animation-iteration-count: infinite; /* Lặp lại vô hạn */
+    animation-timing-function: linear; /* Rơi đều */
+    pointer-events: none; /* Để không chặn sự kiện chuột */
+}
+
+/* Keyframes cho hiệu ứng rơi của bông tuyết */
+@keyframes snowfall {
+    0% {
+        transform: translate3d(var(--x-start), var(--y-start), 0) scale(var(--size));
+        opacity: 0;
+    }
+    5% { /* Bắt đầu hiện dần lên sau khi xuất hiện */
+        opacity: 0.8;
+    }
+    95% { /* Bắt đầu mờ dần trước khi biến mất */
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate3d(var(--x-end), var(--y-end), 0) scale(var(--size));
+        opacity: 0;
+    }
+}
+
+.second-scene #snow-cloud {
+    position: absolute;
+    width: 1500px;
+    height: auto;
+    top: 725px;
+    pointer-events: none;
+}
+
+#side-btf2 {
+    animation: autoMovedown both;
+    animation-timeline: view(40% 30%);
+}
+
+@keyframes autoMovedown {
+    /* Trạng thái ban đầu: không dịch chuyển */
+    0% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+    /* Trạng thái cuối cùng: dịch chuyển sang trái 500px */
+    100% {
+        opacity: 1;
+        transform: translateY(1048px); 
+    }
+}
+
+.second-scene #side-btf2 {
+    position: absolute;
+    width: 500px;
+    height: auto;
+    top: 725px;
+    Left: 510px;
+    transform: rotate(40deg);
+    animation: autoMovedown 5s ease-out 1 forwards;
+}
+
+.second-scene #left-straight {
+    position: absolute;
+    width: 1450px;
+    height: auto;
+    top: 2000px;
+    left: 0;
+}
+
+.second-scene #right-straight {
+    position: absolute;
+    width: 1450px;
+    height: auto;
+    top: 2000px;
+    right: 0;
+}
+
+#fifth-line {
+    Position: absolute;
+    top: 1460px;
+    left: 480px;
+    text-align: center;;
+}
+
+#sixth-line {
+    Position: absolute;
+    top: 1560px;
+    left: 528px;
+    text-align: center;
+}
+
+.heartbeat {
+    position: absolute;
+    top: 1980px;
+    left: 645px;
+    margin: 80px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #EAE5CF;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1000;
+
+    box-shadow:0 0 0 0 #eae5cfa5;
+    animation: pulsing 1.5s infinite linear;
+}
+
+.heartbeat::before, .heartbeat::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 0 0 #eae5cfa5;
+    animation: inherit;
+    animation-delay: -0.5s;
+}
+
+@keyframes pulsing {
+    0% {
+    box-shadow: 0 0 0 0 #eae5cfa5;
+  }
+    100% {
+        box-shadow: 0 0 0 80px #eae5cf2c;
+    }
+}
+
+/*.second-scene #left-crack {
+    position: absolute;
+    width: 1000px;
+    height: auto;
+}
+
+.second-scene #right-crack {
+    position: absolute;
+    width: 1000px;
+    height: auto;
+    left: 1000px;
+}
+
+.second-scene #mid-crack {
+    position: absolute;
+    width: 1000px;
+    height: auto;
+    left: 500px;
+
+}*/
+
+#crack {
+    position: absolute;
+    width: 1000px;
+    height: auto;
+}
+
+.crack-elements {
+  position: absolute;
+  top: 2365px;
+  left: 780px;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 999;
+}
+
+.crack-elements.visible {
+    opacity: 1;
+}
+
+
+.third-content {
+    height: 100vh;
+}
+
+.third-scene { /*cần bằng từ đây*/
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.third-scene img{
+    position: absolute;
+    z-index: 1000;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.third-scene #background-mid {
+    position: absolute;
+    width: 1500px;
+    height: auto;
+    top: 2000px;
+    z-index: 1;
+}
+
+@keyframes floating1 {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(40px);
+    }
+}
+
+.third-scene #first-cloud {
+    position: absolute;
+    width: 1200px;
+    height: auto;
+    top: 1800px;
+    right: -200px;
+    z-index: 2;
+    animation: floating1 2s ease-in-out infinite alternate;
+}
+
+@keyframes floating2 {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(40px);
+    }
+}
+
+.third-scene #second-cloud {
+    position: absolute;
+    width: 1500px;
+    height: auto;
+    top: 2180px;
+    right: 300px;
+    z-index: 3;
+    animation: floating2 1.5s ease-in-out infinite alternate;
+}
+
+.third-scene #poem-third-scene {
+    position: absolute;
+    color: #04212E;
+    text-align: center;
+    z-index: 5;
+}
+
+#seventh-line {
+    position: absolute;
+    width: 1000px;
+    height: auto;
+    top: 2450px;
+    left: 100px;
+}
+
+#eighth-line {
+    position: absolute;
+    width: 1000px;
+    height: auto;
+    top: 3050px;
+    left: 400px;
+}
+
+@keyframes floating3 {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(40px);
+    }
+}
+
+.third-scene #third-cloud {
+    position: absolute;
+    width: 1000px;
+    height: auto;
+    top: 2980px;
+    right: 50px;
+    animation: floating3 2s ease-in-out infinite alternate;
+
+}
+
+.third-scene #first-wind {
+    position: absolute;
+    width: 1000px;
+    height: auto;
+    top: 1880px;
+    left: 20px;
+    z-index: 2;
+}
+
+.third-scene #second-wind {
+    position: absolute;
+    width: 1000px;
+    height: auto;
+    top: 2250px;
+    right: -100px;
+    z-index: 2;
+}
+
+.third-scene #third-wind {
+    position: absolute;
+    width: 1000px;
+    height: auto;
+    top: 2650px;
+    left: -50px;
+    z-index: 2;
+}
+
+.third-scene .rectangle {
+  width: 1500px;      /* horizontal size */
+  height: 300px;     /* vertical size */
+  background-color: #04212E; 
+  position: absolute;
+  top: 3480px;
+  z-index: 2000;
+}
+
+.fourth-content {
+    height: 100vh;
+}
+
+.fourth-scene { /*cần bằng từ đây*/
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.fourth-scene img{
+    position: absolute;
+    z-index: 10000;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.fourth-scene #ninth-line {
+    position: absolute;
+    top: 2800px;
+    text-align: center;
+    width: 100%;
+}
+
+.fourth-scene #eye-butterfly {
+    position: absolute;
+    width: 600px;
+    height: auto;
+    top: 2900px;
+    left: 400px;
+    z-index: 3;
+}
+
+
+.heartbeat2 {
+    position: absolute;
+    top: 2900px;
+    left: 200px;
+    margin: 80px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid #EAE5CF;
+    background-color: transparent;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1000;
+
+    box-shadow:0 0 0 0 #eae5cfa5;
+    animation: pulsing2 1.5s infinite linear;
+}
+
+.heartbeat2::before, .heartbeat2::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 0 0 #eae5cfa5;
+    animation: inherit;
+    animation-delay: -0.5s;
+}
+
+@keyframes pulsing2 {
+    0% {
+    box-shadow: 0 0 0 0 #eae5cfa5;
+  }
+    100% {
+        box-shadow: 0 0 0 80px #eae5cf2c;
+    }
+}
+
+
+.heartbeat3 {
+    position: absolute;
+    top: 3200px;
+    left: 200px;
+    margin: 80px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid #EAE5CF;
+    background-color: transparent;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1000;
+
+    box-shadow:0 0 0 0 #eae5cfa5;
+    animation: pulsing2 1.5s infinite linear;
+}
+
+.heartbeat3::before, .heartbeat3::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 0 0 #eae5cfa5;
+    animation: inherit;
+    animation-delay: -0.5s;
+}
+
+@keyframes pulsing2 {
+    0% {
+    box-shadow: 0 0 0 0 #eae5cfa5;
+  }
+    100% {
+        box-shadow: 0 0 0 80px #eae5cf2c;
+    }
+}
+
+.heartbeat5 {
+    position: absolute;
+    top: 2900px;
+    right: 200px;
+    margin: 80px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid #EAE5CF;
+    background-color: transparent;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1000;
+
+    box-shadow:0 0 0 0 #eae5cfa5;
+    animation: pulsing5 1.5s infinite linear;
+}
+
+.heartbeat5::before, .heartbeat5::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 0 0 #eae5cfa5;
+    animation: inherit;
+    animation-delay: -0.5s;
+}
+
+@keyframes pulsing5 {
+    0% {
+    box-shadow: 0 0 0 0 #eae5cfa5;
+  }
+    100% {
+        box-shadow: 0 0 0 80px #eae5cf2c;
+    }
+}
+
+
+.heartbeat4 {
+    position: absolute;
+    top: 3200px;
+    right: 200px;
+    margin: 80px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid #EAE5CF;
+    background-color: transparent;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1000;
+
+    box-shadow:0 0 0 0 #eae5cfa5;
+    animation: pulsing2 1.5s infinite linear;
+}
+
+.heartbeat4::before, .heartbeat4::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 0 0 #eae5cfa5;
+    animation: inherit;
+    animation-delay: -0.5s;
+}
+
+@keyframes pulsing4 {
+    0% {
+    box-shadow: 0 0 0 0 #eae5cfa5;
+  }
+    100% {
+        box-shadow: 0 0 0 80px #eae5cf2c;
+    }
+}
+
+.fifth-content {
+    height: 100vh;
+}
+
+.fifth-scene { /*cần bằng từ đây*/
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    z-index: 100000;
+}
+
+.fifth-scene img{
+    position: absolute;
+    z-index: 100000;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.fifth-scene #cat-jump-down {
+    position: absolute;
+    width: 300px;
+    height: auto;
+    top: 2900px;
+    Left: 550px;
+    z-index: 1;
+    
+
+}
+
+.fifth-scene #tenth-line {
+    position: absolute;
+    top: 3800px;
+    text-align: center;
+    width: 100%;
+}
+
+.fifth-scene #big-cat-head {
+    position: absolute;
+    width: 500px;
+    height: auto;
+    top: 3300px;
+    left: 450px;
+    z-index: 2;
+    
+}
+
+
+@keyframes autoMoveLeft {
+    /* Trạng thái ban đầu: không dịch chuyển */
+    0% {
+        transform: translateX(0);
+    }
+    /* Trạng thái cuối cùng: dịch chuyển sang trái 500px */
+    100% {
+        transform: translateX(-500px); 
+    }
+}
+
+.fifth-scene #hand-cover {
+    position: absolute;
+    width: 500px;
+    height: auto;
+    top: 3300px;
+    left: 800px;
+    z-index: 100;
+    animation: autoMoveLeft 5s ease-in-out infinite alternate;
+}
+
+.sixth-content {
+    height: 100vh;
+}
+
+.sixth-scene { /*cần bằng từ đây*/
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000000;
+}
+
+.sixth-scene img{
+    position: absolute;
+    z-index: 1000000;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.sixth-scene #eleventh-line {
+    position: absolute;
+    top: 3500px;
+    left: 60px;
+}
+
+@keyframes autoRotate1 {
+    /* Trạng thái ban đầu: không dịch chuyển */
+    0% {
+        transform: rotate(0);
+    }
+    /* Trạng thái cuối cùng: dịch chuyển sang trái 500px */
+    100% {
+        transform: rotate(-10deg); 
+    }
+}
+
+.sixth-scene #hand-flower {
+    position: absolute;
+    width: 800px;
+    height: auto;
+    top: 3200px;
+    left: 650px;
+    transform: rotate(-35deg);
+    animation: autoRotate1 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes autoRotate2 {
+    /* Trạng thái ban đầu: không dịch chuyển */
+    0% {
+        transform: translateY(0);
+    }
+    /* Trạng thái cuối cùng: dịch chuyển sang trái 500px */
+    100% {
+        transform: translateY(40px); 
+    }
+}
+
+.sixth-scene #hand-tree {
+    position: absolute;
+    width: 600px;
+    height: auto;
+    top: 3800px;
+    left: 20px;
+    animation: autoRotate2 3.5s ease-in-out infinite alternate;
+}
+
+.sixth-scene #twelve-line {
+    position: absolute;
+    top: 3950px;
+    left: 660px;
+    justify-content: center;
+    text-align: center;
+}
+
+.seventh-content {
+    height: 100vh;
+}
+
+.seventh-scene { /*cần bằng từ đây*/
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000000;
+}
+
+.seventh-scene img{
+    position: absolute;
+    z-index: 10000000;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.seventh-scene #thirteen-line {
+    position: absolute;
+    top: 3800px;
+    left: 900px;
+    text-align: center;
+}
+
+.seventh-scene #fourteen-line {
+    position: absolute;
+    top: 3950px;
+    left: 500px;
+    text-align: center;
+}
+
+.seventh-scene #fifteen-line {
+    position: absolute;
+    top: 4100px;
+    left: 100px;
+    text-align: center;
+}
+
+.seventh-scene #blender-bg {
+    position: absolute;
+    width: 1500px;
+    height: auto;
+    top: 4000px;
+    left: 0;
+}
+
+.seventh-scene #side-btf {
+    position: absolute;
+    width: 300px;
+    height: auto;
+    top: 4200px;
+    left: 300px;
+}
